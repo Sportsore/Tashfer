@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الأكواد المحفوظة</title>
+  <style>
+    body {
+      font-family: "Tajawal", sans-serif;
+      direction: rtl;
+      background-color: #0f0f0f;
+      color: #00ff00;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #00ff00;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background: #000;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #00ff00;
+    }
+  </style>
+</head>
+<body>
+  <h1>الأكواد المحفوظة</h1>
+  <ul id="savedCodesList"></ul>
+
+  <script>
+    const savedCodes = JSON.parse(localStorage.getItem("savedCodes") || "[]");
+    const list = document.getElementById("savedCodesList");
+
+    savedCodes.forEach((code, index) => {
+      const listItem = document.createElement("li");
+      listItem.innerText = `${index + 1}. [${code.type}]: ${code.content}`;
+      list.appendChild(listItem);
+    });
+
+    if (!savedCodes.length) {
+      list.innerHTML = "<li>لا توجد أكواد محفوظة.</li>";
+    }
+  </script>
+</body>
+</html>
