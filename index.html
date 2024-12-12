@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تطبيق تشفير الملفات والنصوص</title>
+  <style>
+    body {
+      font-family: "Tajawal", sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      direction: rtl;
+      background-color: #0f0f0f;
+      color: #fff;
+    }
+    header {
+      background-image: url("https://stream.gkbotz.workers.dev/dl/675b3586f4f4a93d963f17a7");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 200px;
+    }
+    header h1 {
+      font-size: 36px;
+      font-weight: bold;
+      color: #00ff00;
+      text-shadow: 0 0 10px #00ff00;
+    }
+    input, button, textarea {
+      margin: 10px 0;
+      padding: 10px;
+      width: 80%;
+      max-width: 500px;
+      font-family: "Tajawal", sans-serif;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    }
+    textarea {
+      height: 150px;
+    }
+    button {
+      cursor: pointer;
+      background-color: #00ff00;
+      color: black;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: #00aa00;
+      color: #fff;
+    }
+    #clearButton {
+      display: none;
+      width: 50%;
+      font-size: 14px;
+      margin-top: -5px;
+      background-color: #ff3333;
+      color: white;
+      border-radius: 5px;
+    }
+    #output {
+      margin-top: 20px;
+      word-wrap: break-word;
+      background: #000;
+      padding: 15px;
+      border-radius: 10px;
+      font-family: "Courier New", monospace;
+      font-size: 14px;
+      text-align: left;
+      color: #00ff00;
+      box-shadow: 0 0 15px #00ff00;
+    }
+    #copyButton {
+      margin-top: 10px;
+      background-color: #ffcc00;
+      color: black;
+      border-radius: 5px;
+      display: none;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #aaa;
+    }
+    footer a {
+      color: #00ff00;
+      text-decoration: none;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .page-link {
+      margin: 20px 0;
+      display: inline-block;
+      font-size: 16px;
+      text-decoration: none;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    .page-link:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>تطبيق تشفير الملفات والنصوص</h1>
+  </header>
+  
+  <input type="file" id="fileInput" />
+  <textarea id="textInput" placeholder="اكتب النص هنا..."></textarea>
+  <button id="clearButton">حذف النص</button>
+  <input type="password" id="password" placeholder="أدخل كلمة المرور" />
+
+  <div class="button-container">
+    <button id="encryptButton">تشفير</button>
+    <button id="decryptButton">فك التشفير</button>
+  </div>
+  
+  <div id="output"></div>
+  <button id="copyButton">نسخ النتيجة</button>
+
+  <a href="saved.html" class="page-link">عرض الأكواد المحفوظة</a>
+
+  <footer>
+    © جميع الحقوق محفوظة. للتواصل عبر <a href="https://t.me/caser7" target="_blank">Telegram: caser7</a>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
